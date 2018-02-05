@@ -19,15 +19,25 @@ const formatStation = station => {
 };
 
 app.get("/", (req, res) => {
-  Station.find({}).then(stations => {
-    res.json(stations.map(formatStation));
-  });
+  Station.find({})
+    .then(stations => {
+      res.json(stations.map(formatStation));
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(404).end();
+    });
 });
 
 app.get("/stations", (req, res) => {
-  Station.find({}).then(stations => {
-    res.json(stations.map(formatStation));
-  });
+  Station.find({})
+    .then(stations => {
+      res.json(stations.map(formatStation));
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(404).end();
+    });
 });
 
 app.get("/stations/:id", (req, res) => {
@@ -43,8 +53,6 @@ app.get("/stations/:id", (req, res) => {
 
 app.put("/stations/:id", (req, res) => {
   const body = req.body;
-
-  console.log("HALOOOO " + body);
 
   const station = {
     name: body.name,
