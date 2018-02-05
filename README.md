@@ -1,4 +1,4 @@
 Weather app
 =======
 
-[Sovellus](https://still-bayou-99329.herokuapp.com/)
+Application is running in [Heroku](https://still-bayou-99329.herokuapp.com/)
