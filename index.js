@@ -5,6 +5,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const Station = require("./models/station");
 
+app.use(express.static("build"));
 app.use(cors());
 app.use(bodyParser.json());
 
